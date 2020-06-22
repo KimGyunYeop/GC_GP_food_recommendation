@@ -25,10 +25,9 @@ num_epochs = args.num_epochs
 max_grad_norm = args.max_grad_norm
 log_interval = args.log_interval
 learning_rate = args.learning_rate
+data_tsv = args.data_tsv
+data_excel = args.data_excel
 
-
-data_tsv_path = "data/test_data.txt"
-data_excel_path = "data/test_data.xlsx"
 bertmodel, vocab = get_pytorch_kobert_model()
 
 df = pd.read_excel(data_excel_path)

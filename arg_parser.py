@@ -31,6 +31,10 @@ def cleaning_test():
                         help='save file name in cleaning_result')
     parser.add_argument('--model_file', type=str, default="cleaning_model/BERT_27.model",
                         help='load model path')
+    parser.add_argument('--data_tsv', type=str, default="data/test_data.txt",
+                        help='test data_tsv file')
+    parser.add_argument('--data_excel', type=str, default="data/test_data.xlsx",
+                        help='test data_excel file')
     parser.add_argument('--max_len', type=int, default=64,
                         help='max_len')
     parser.add_argument('--batch_size', type=int, default=64,
@@ -57,7 +61,7 @@ def recommend_train():
                         help='train file path')
     parser.add_argument('--test_path', type=str, default="cleaning_result/cleaning_test_bert.xlsx",
                         help='test file path')
-    parser.add_argument('--save_file', type=str, default="ifm_model.pickle",
+    parser.add_argument('--save_model_file', type=str, default="ifm_model.pickle",
                         help='save file name in recommend_model directory')
     parser.add_argument('--cleaning_train', type=bool, default=True,
                         help='cleaning train dataset')
