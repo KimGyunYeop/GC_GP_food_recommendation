@@ -38,10 +38,13 @@ if cleaning_test:
 foods_items = max(np.array(list(map(np.int32,data_all["menu_id"]))))+1
 num_user = max(np.array(list(map(np.int32,data_all["id"]))))+100
 for data,name in zip((data_train,data_test),("train","test")):
+  data["time"] = pd.to_datetime(data["time"])
+  data = data.sort_values(by=['time'], axis=0)
+  timeStamps = np.arange(len(data))
   ids = np.array(list(map(np.int32,data["id"])))
   foods = np.array(list(map(np.int32,data["menu_id"])))
   ratings = np.array(list(map(np.float32,data["rating"])))
-  dataset = Interactions(user_ids=ids,item_ids=foods,ratings=ratings,num_users=int(num_user),num_items=int(foods_items))
+  dataset = Interactions(user_ids=ids,item_ids=foods,ratings=ratings,num_users=int(num_user),num_items=int(foods_items),timestamps=timeStamps)
   
   if name == "test":
     dataset_test = dataset
