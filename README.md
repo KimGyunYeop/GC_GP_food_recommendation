@@ -1,5 +1,5 @@
 # GC_GP_food_recommendation
-gachon university graduation project   
+Gachon Univ. graduation project   
 food recommendation system with data cleaning model
 
 # Usage   
@@ -62,5 +62,5 @@ recommendation with data cleaning result
 >cleaning_train: set train dataset cleaning   
 >cleaning_test: set test dataset cleaning   
 >n_iter: model training iteration number   
-***
-### result
+
+# result
