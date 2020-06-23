@@ -6,13 +6,13 @@ food recommendation system with data cleaning model
 
 ### install package  
 create enviorment with python 3.6
-
-    cd KoBERT
-    pip install -r requirement.txt   
+    
+    pip install -r requirement.txt  
+    conda install -c maciejkula -c pytorch spotlight
+    git clone https://github.com/SKTBrain/KoBERT.git
+    cd KoBERT 
     pip install .   
     cd ..   
-    pip install -r requirement.txt   
-    conda install -c maciejkula -c pytorch spotlight
 
 ***
 ### data crawling
