@@ -5,8 +5,8 @@ food recommendation system with data cleaning model
 # Usage   
 
 ### install package  
-create enviorment with python 3.6
-use KoBERT package in https://github.com/SKTBrain/KoBERT.git
+Create enviorment with python 3.6   
+Use KoBERT package in https://github.com/SKTBrain/KoBERT.git
     
     pip install -r requirement.txt  
     conda install -c maciejkula -c pytorch spotlight
@@ -27,9 +27,9 @@ __grouping.py__ is change format of crawl data and return test_data, train_data 
 
 ***
 ### data cleaning
-data cleaning with bert or rnn classifier   
+Data cleaning with bert or rnn classifier   
 #### Train   
-save best epoch's model parameter in cleaning_model   
+Save best epoch's model parameter in cleaning_model   
 
     python train_cleaning.py --model_mode bert --batch_size 64 --num_epoch 30   
     
@@ -38,7 +38,7 @@ save best epoch's model parameter in cleaning_model
 >num_epoch: train epoch number   
    
 #### test   
-testing review data cleaning   
+Testing review data cleaning   
 
     python test_cleaning.py --model_mode bert --data_tsv data/test_data.txt --data_excel data/test_data.xlsx\    
     --model_file cleaning_model/BERT_27.model --save_file test_result.xlsx 
@@ -50,7 +50,7 @@ testing review data cleaning
 >save_file: result file name, save in cleaning_result folder   
 ***
 ### recommendation
-recommendation with data cleaning result   
+Recommendation with data cleaning result   
 
     python recommendation_train.py --model_mode ifm --save_model_file ifm_model.pickle\
     --test_path cleaning_result/cleaning_test_bert.xlsx --train_path data/train_data.xlsx\
@@ -64,4 +64,25 @@ recommendation with data cleaning result
 >cleaning_test: set test dataset cleaning   
 >n_iter: model training iteration number   
 
-# result
+# RESULT   
+### Data cleaning performace   
+| model | Accuracy |
+|:-----:|:--------:|
+| RNN   | 71.32    |
+| BERT  | 78.13    |   
+***
+### Recommendation model performance   
+|              model              | Accuracy |
+|:-------------------------------:|:--------:|
+| Explicit Feedback Factorization |   0.012  |
+| Implicit Feedback Factorization |   0.073  |
+|             Wavenet             |   0.024  |   
+***
+### Recommendation System performance with data cleaning   
+|           model           | Accuracy |
+|:-------------------------:|:--------:|
+| Wavenet w/o Data cleaning |   0.020  |
+|  Wavenet w/ Data cleaning |   0.060  |
+|   IFM w/o Data cleaning   |   0.057  |
+|    IFM w/  Data clening   |   0.130  |
+
