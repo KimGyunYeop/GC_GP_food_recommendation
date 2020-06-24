@@ -40,7 +40,7 @@ Save best epoch's model parameter in cleaning_model
 #### test   
 Testing review data cleaning   
 
-    python test_cleaning.py --model_mode bert --data_tsv data/test_data.txt --data_excel data/test_data.xlsx\    
+    python test_cleaning.py --model_mode bert --data_tsv data/test_data.txt --data_excel data/test_data.xlsx \    
     --model_file cleaning_model/BERT_27.model --save_file test_result.xlsx 
 
 >model_mode: setting model mode of data cleaing model[bert/rnn]     
@@ -52,8 +52,8 @@ Testing review data cleaning
 ### recommendation
 Recommendation with data cleaning result   
 
-    python recommendation_train.py --model_mode ifm --save_model_file ifm_model.pickle\
-    --test_path cleaning_result/cleaning_test_bert.xlsx --train_path data/train_data.xlsx\
+    python recommendation_train.py --model_mode ifm --save_model_file ifm_model.pickle \
+    --test_path cleaning_result/cleaning_test_bert.xlsx --train_path data/train_data.xlsx \
     --cleaning_train True --cleaning_test True --n_iter 5
     
 >model_mode: setting model mode of recommendation model[ifm/efm/cnn]      
