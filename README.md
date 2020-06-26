@@ -40,7 +40,7 @@ Save best epoch's model parameter in cleaning_model
 #### test   
 Testing review data cleaning   
 
-    python test_cleaning.py --model_mode bert --data_tsv data/test_data.txt --data_excel data/test_data.xlsx \    
+    python test_cleaning.py --model_mode bert --data_tsv data/test_data.txt --data_excel data/test_data.xlsx \
     --model_file cleaning_model/BERT_27.model --save_file test_result.xlsx 
 
 >model_mode: setting model mode of data cleaing model[bert/rnn]     
