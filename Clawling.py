@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 data_path = "data/"
-store_data = pd.read_excel(os.path.join(data_path,"°¡°Ô_LIST_¿ëÀÎ.xlsx"))
+store_data = pd.read_excel(os.path.join(data_path,"data/ê°€ê²Œ_LIST_ìš©ì¸.xlsx"))
 
 main_url= "https://www.yogiyo.co.kr/api/v1/reviews/"
 store_list = store_data["ID"]
