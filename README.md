@@ -19,7 +19,7 @@ Use KoBERT package in https://github.com/SKTBrain/KoBERT.git
 ### data crawling
 crawl review data of 60 stores in yogiyo and formatting dataset to our model
 
-    python Crawling.py
+    python Clawling.py
     python grouping.py
 
 __Crawling.py__ is crawl data in yogiyo and return data/crawl_data.csv   
