@@ -15,9 +15,9 @@ args = cleaning_test()
 device = torch.device("cuda:1")
 
 ## Setting parameters
-model_mode = args.model_file
+model_mode = args.model_mode
 save_path = os.path.join("cleaning_result",args.save_file)
-model_path = args.model_path
+model_path = args.model_file
 max_len = args.max_len
 batch_size = args.batch_size
 warmup_ratio = args.warmup_ratio
