@@ -30,8 +30,8 @@ data_excel = args.data_excel
 
 bertmodel, vocab = get_pytorch_kobert_model()
 
-df = pd.read_excel(data_excel_path)
-dataset_test = nlp.data.TSVDataset(data_tsv_path, field_indices=[1,2], num_discard_samples=1)
+df = pd.read_excel(data_excel)
+dataset_test = nlp.data.TSVDataset(data_tsv, field_indices=[1,2], num_discard_samples=1)
 
 tokenizer = get_tokenizer()
 tok = nlp.data.BERTSPTokenizer(tokenizer, vocab, lower=False)
